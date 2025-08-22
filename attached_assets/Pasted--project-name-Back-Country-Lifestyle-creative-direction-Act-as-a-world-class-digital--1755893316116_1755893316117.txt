@@ -1,0 +1,136 @@
+{
+  "project_name": "Back Country Lifestyle",
+  "creative_direction": "Act as a world-class digital product designer with 15+ years of experience, including serving as Head of Design at Apple. Apply that depth of craft to create a super-unique, premium, and aspirational e-commerce experience that feels timeless, intuitive, and iconic.",
+  "vision": "Design a Back Country Lifestyle platform that is bold, immersive, and story-driven. It should feel like Apple’s design DNA meets Patagonia’s storytelling — clean, minimal, and emotionally engaging, with a focus on quality, trust, and adventure.",
+  "design_principles": {
+    "uniqueness": "Avoid generic ecommerce layouts — every section should feel like it was intentionally crafted, not templated.",
+    "minimalism": "Whitespace, balance, and clean lines are as important as the content itself.",
+    "storytelling": "Every product and brand should tell a story; design for curiosity and immersion.",
+    "human_touch": "Subtle microinteractions, warmth in typography, and crafted details make the digital feel personal."
+  },
+  "global_settings": {
+    "brand": {
+      "logo_text": "BACK COUNTRY",
+      "tagline": "Gear up for your next adventure",
+      "remove_orange_hero_bar": true
+    },
+    "color_palette": {
+      "primary": "#1B3A2A",
+      "secondary": "#0E2A47",
+      "accent": "#C8491C",
+      "sand": "#F4E3C1",
+      "ink": "#111827",
+      "background": "#FAFAF9"
+    },
+    "typography": {
+      "headings": "Montserrat Alternates",
+      "body": "Inter",
+      "accent": "Oswald",
+      "principle": "Typography should carry the feeling of crafted outdoor adventure gear — bold yet refined, with Apple-like clarity."
+    },
+    "motion": {
+      "philosophy": "Motion should be meaningful, not decorative — like Apple product transitions, each animation should guide attention, provide context, and feel fluid.",
+      "examples": ["Mini-cart slide-out with spring physics", "Page transitions with fade+scale harmony", "Subtle hover states with depth"]
+    }
+  },
+  "navigation": [
+    {"label": "Shop", "href": "/shop"},
+    {"label": "Explore", "href": "/explore"},
+    {"label": "Brands", "href": "/brands"},
+    {"label": "Private Label", "href": "/private-label"},
+    {"label": "Sustainability", "href": "/sustainability"}
+  ],
+  "pages": {
+    "/": {
+      "type": "home",
+      "sections": [
+        {
+          "component": "Hero",
+          "props": {
+            "background_image": "/images/hero-nz-alps.jpg",
+            "headline": "Gear up for your next adventure",
+            "subcopy": "Premium outdoor gear curated globally + Back Country Originals designed in New Zealand.",
+            "ctas": [
+              {"label": "Explore Collection", "href": "/shop", "variant": "primary"},
+              {"label": "Watch Our Story", "href": "/explore/story", "variant": "secondary"}
+            ],
+            "overlay": {"enabled": true, "color": "#000000", "opacity": 0.25},
+            "remove_orange_bar_if_present": true
+          },
+          "design_notes": "This hero should feel cinematic, like an Apple product reveal — crisp typography, immersive photography, restrained overlays."
+        },
+        {
+          "component": "ActivityTiles",
+          "props": {
+            "items": [
+              {"title": "Hike", "image": "/images/act-hike.jpg", "href": "/shop?activity=hike"},
+              {"title": "Camp", "image": "/images/act-camp.jpg", "href": "/shop?activity=camp"},
+              {"title": "Travel", "image": "/images/act-travel.jpg", "href": "/shop?activity=travel"},
+              {"title": "Lifestyle", "image": "/images/act-lifestyle.jpg", "href": "/shop?activity=lifestyle"}
+            ]
+          },
+          "design_notes": "Design as modular lifestyle stories, not flat boxes. Each tile should feel alive with hover motion and subtle depth."
+        },
+        {
+          "component": "PrivateLabelSpotlight",
+          "props": {
+            "title": "Back Country Originals",
+            "copy": "Designed in New Zealand. Alpine-tested. Crafted with sustainable materials.",
+            "image": "/images/private-label.jpg",
+            "href": "/private-label"
+          },
+          "design_notes": "Should feel like a brand film still — dark background, elegant typography, clean button. Evoke trust + exclusivity."
+        },
+        {
+          "component": "BrandGrid",
+          "props": {
+            "title": "New brands we love",
+            "brands": [
+              {"name": "Fjallraven", "logo": "/brands/fjallraven.svg"},
+              {"name": "Arc'teryx", "logo": "/brands/arcteryx.svg"},
+              {"name": "Cotopaxi", "logo": "/brands/cotopaxi.svg"},
+              {"name": "Snow Peak", "logo": "/brands/snowpeak.svg"}
+            ]
+          },
+          "design_notes": "Logos should breathe. Hover states reveal origin + ethos. Treat them like prestige partners."
+        },
+        {
+          "component": "ExploreHubTeaser",
+          "props": {
+            "title": "Explore the back country",
+            "items": [
+              {"title": "Tongariro Alpine Crossing Guide", "href": "/explore/guides/tongariro"},
+              {"title": "Weekend Tramping Kit", "href": "/explore/kits/weekend-tramp"},
+              {"title": "Campfire Recipes", "href": "/explore/journal/campfire-recipes"}
+            ]
+          },
+          "design_notes": "Editorial tone. Apple News–style card layout. Clear visual hierarchy between headline and image."
+        },
+        {
+          "component": "UGCCarousel",
+          "props": {
+            "title": "Your adventures",
+            "hashtag": "#BackCountryNZ",
+            "images": ["/ugc/1.jpg", "/ugc/2.jpg", "/ugc/3.jpg"]
+          },
+          "design_notes": "Polished, Instagram-like but restrained. Highlight community without clutter."
+        }
+      ]
+    }
+  },
+  "checkout": {
+    "flow": "3-step guided process (Shipping → Payment → Review)",
+    "progress_bar": true,
+    "real_time_validation": true,
+    "design_notes": "Minimal, distraction-free. Treat checkout like Apple Pay — seamless, fast, and intuitive."
+  },
+  "norman_principles": {
+    "affordances": "Buttons and filters clearly look interactive.",
+    "signifiers": "Icons, hover effects, motion cues guide action.",
+    "constraints": "Simplified nav, limited filters, grayed unavailable options.",
+    "mapping": "Actions yield direct visible results (filters update instantly).",
+    "feedback": "Cart slide-outs, hover depth, validation messages.",
+    "conceptual_model": "Site organized by adventures not SKUs.",
+    "discoverability": "Stories, guides, shoppable looks ensure exploration."
+  }
+}

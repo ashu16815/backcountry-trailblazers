@@ -29,27 +29,54 @@ const collections = [
 
 const PrivateLabelSpotlight = () => {
   return (
-    <section className="py-20 bg-muted/30">
+    <section className="py-32 bg-gradient-to-b from-background via-muted/20 to-background relative overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="text-center mb-16">
+        <div className="text-center mb-20">
           <Badge variant="outline" className="mb-4 text-accent border-accent">
             BACK COUNTRY ORIGINALS
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
-            DESIGNED FOR 
-            <span className="gradient-accent bg-clip-text text-transparent block">
-              NEW ZEALAND
-            </span>
+          <h2 className="text-5xl md:text-6xl font-heading font-bold text-foreground mb-8 leading-tight">
+            Back Country Originals
           </h2>
-          <p className="text-xl text-muted-foreground font-serif max-w-3xl mx-auto">
-            Our private label collections are born from the rugged beauty of Aotearoa. 
-            Each piece is designed, tested, and perfected in New Zealand's diverse landscapes.
+          <p className="text-2xl text-muted-foreground font-sans max-w-4xl mx-auto leading-relaxed">
+            Designed in New Zealand. Alpine-tested. Crafted with sustainable materials.
           </p>
         </div>
 
+        {/* Featured Story Block - Cinematic */}
+        <div className="relative mb-20">
+          <div className="bg-gradient-to-r from-primary via-primary/90 to-secondary rounded-2xl overflow-hidden shadow-premium">
+            <div className="relative h-96 md:h-[500px] flex items-center">
+              {/* Background Pattern */}
+              <div className="absolute inset-0 opacity-20">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
+              </div>
+              
+              <div className="relative z-10 container mx-auto px-8">
+                <div className="max-w-3xl">
+                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 mb-6">
+                    CRAFTED IN AOTEAROA
+                  </Badge>
+                  <h3 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
+                    Born from New Zealand's 
+                    <span className="block">untamed landscapes</span>
+                  </h3>
+                  <p className="text-xl text-white/90 font-sans leading-relaxed mb-8">
+                    Every piece tells a story of mountains conquered, trails blazed, and conditions mastered. 
+                    This is gear that doesn't just perform—it inspires.
+                  </p>
+                  <Button variant="ghost" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary transition-smooth font-accent px-8 py-4">
+                    Discover Our Story
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         {/* Collections Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16">
           {collections.map((collection, index) => {
             const IconComponent = collection.icon;
             return (

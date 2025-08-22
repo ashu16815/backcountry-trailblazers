@@ -1,0 +1,193 @@
+{
+  "project_name": "Back Country Lifestyle",
+  "stack": {
+    "framework": "Next.js or Vite-React",
+    "styling": "TailwindCSS",
+    "icons": "lucide-react",
+    "state": "zustand",
+    "cms": "local-json (stub)",
+    "payments": "Stripe (stub)",
+    "analytics": "Plausible or GA (env-driven)"
+  },
+  "global_settings": {
+    "brand": {
+      "logo_text": "BACK COUNTRY",
+      "tagline": "Gear up for your next adventure",
+      "remove_orange_hero_bar": true
+    },
+    "colors": {
+      "primary": "#1B3A2A",
+      "secondary": "#0E2A47",
+      "accent": "#E95D2A",
+      "sand": "#F4E3C1",
+      "ink": "#111827",
+      "foreground": "#0F172A",
+      "background": "#FAFAF9",
+      "muted": "#6B7280",
+      "success": "#0F766E",
+      "warning": "#B45309",
+      "error": "#B91C1C"
+    },
+    "typography": {
+      "heading": "Montserrat Alternates",
+      "body": "Inter",
+      "accent": "Oswald",
+      "scale": [12, 14, 16, 18, 20, 24, 30, 36, 48]
+    },
+    "breakpoints": ["sm", "md", "lg", "xl"],
+    "accessibility": {
+      "min_touch_target_px": 44,
+      "min_contrast_ratio": 4.5,
+      "semantic_headings": true,
+      "focus_visible": true,
+      "alt_text_required": true
+    },
+    "seo": {
+      "title": "Back Country Lifestyle — Premium Outdoor & Adventure Gear",
+      "description": "Curated international outdoor brands and Back Country Originals designed for New Zealand conditions.",
+      "open_graph_image": "/og/hero.jpg",
+      "robots": "index,follow"
+    }
+  },
+  "navigation": [
+    { "label": "Shop", "href": "/shop" },
+    { "label": "Explore", "href": "/explore" },
+    { "label": "Brands", "href": "/brands" },
+    { "label": "Private Label", "href": "/private-label" },
+    { "label": "Sustainability", "href": "/sustainability" }
+  ],
+  "pages": {
+    "/": {
+      "type": "home",
+      "sections": [
+        {
+          "component": "Hero",
+          "props": {
+            "background_image": "/images/hero-nz-alps.jpg",
+            "headline": "Gear up for your next adventure",
+            "subcopy": "Discover curated outdoor gear from premium international brands, plus our exclusive Back Country Originals.",
+            "ctas": [
+              { "label": "Explore Collection", "href": "/shop", "variant": "primary" },
+              { "label": "Watch our story", "href": "/explore/story", "variant": "secondary" }
+            ],
+            "overlay": { "enabled": false, "color": "#000000", "opacity": 0.25 },
+            "remove_orange_bar_if_present": true
+          }
+        },
+        {
+          "component": "ActivityTiles",
+          "props": {
+            "items": [
+              { "title": "Hike", "image": "/images/act-hike.jpg", "href": "/shop?activity=hike" },
+              { "title": "Camp", "image": "/images/act-camp.jpg", "href": "/shop?activity=camp" },
+              { "title": "Travel", "image": "/images/act-travel.jpg", "href": "/shop?activity=travel" },
+              { "title": "Lifestyle", "image": "/images/act-lifestyle.jpg", "href": "/shop?activity=lifestyle" }
+            ]
+          }
+        },
+        {
+          "component": "PrivateLabelSpotlight",
+          "props": {
+            "title": "Back Country Originals",
+            "copy": "Designed in New Zealand. Alpine-tested. Sustainable materials.",
+            "image": "/images/private-label.jpg",
+            "href": "/private-label"
+          }
+        },
+        {
+          "component": "BrandGrid",
+          "props": {
+            "title": "New brands we love",
+            "brands": [
+              { "name": "Fjallraven", "logo": "/brands/fjallraven.svg", "href": "/brands/fjallraven" },
+              { "name": "Arc'teryx", "logo": "/brands/arcteryx.svg", "href": "/brands/arcteryx" },
+              { "name": "Cotopaxi", "logo": "/brands/cotopaxi.svg", "href": "/brands/cotopaxi" },
+              { "name": "Snow Peak", "logo": "/brands/snowpeak.svg", "href": "/brands/snow-peak" }
+            ]
+          }
+        },
+        {
+          "component": "ExploreHubTeaser",
+          "props": {
+            "title": "Explore the back country",
+            "items": [
+              { "title": "Tongariro Alpine Crossing Guide", "href": "/explore/guides/tongariro" },
+              { "title": "Weekend Tramping Kit", "href": "/explore/kits/weekend-tramp" },
+              { "title": "Campfire Recipes", "href": "/explore/journal/campfire-recipes" }
+            ]
+          }
+        },
+        {
+          "component": "UGCCarousel",
+          "props": {
+            "title": "Your adventures",
+            "hashtag": "#BackCountryNZ",
+            "images": ["/ugc/1.jpg", "/ugc/2.jpg", "/ugc/3.jpg"]
+          }
+        }
+      ]
+    },
+    "/shop": {
+      "type": "category",
+      "filters": ["activity", "size", "season", "sustainability"],
+      "product_card": { "quick_add": true, "sustainability_badge": true, "hover_effect": "lift" },
+      "empty_state": "No matches. Try removing a filter.",
+      "sorting": ["new", "price-asc", "price-desc", "bestsellers"]
+    },
+    "/product/[slug]": {
+      "type": "product",
+      "layout": {
+        "gallery": { "video_support": true, "zoom": true },
+        "buybox": { "sticky_on_scroll": true, "buttons": ["add_to_cart", "save"] },
+        "tabs": ["Details", "Materials", "Sustainability", "Reviews"],
+        "bundle": { "title": "Adventure Kit", "enabled": true }
+      }
+    },
+    "/brands": { "type": "brands_index", "story_mode": true },
+    "/private-label": { "type": "story", "sections": ["origin", "materials", "field_testing", "collections"] },
+    "/sustainability": {
+      "type": "policy",
+      "pillars": ["Materials", "Repairability", "Packaging", "Supply Chain"],
+      "badges": ["Recycled", "Organic", "PFAS-free", "Repair Service"]
+    },
+    "/checkout": {
+      "type": "checkout",
+      "steps": ["Shipping", "Payment", "Review"],
+      "progress_indicator": true,
+      "address_autocomplete": true,
+      "validation": "realtime"
+    }
+  },
+  "components": {
+    "Hero": { "affordances": ["visible_cta_buttons", "scroll_hint"], "feedback": ["cta_hover", "lazyload_bg"] },
+    "ActivityTiles": { "mapping": "tiles->activity filter", "constraints": ["max 4 per row on desktop", "2 per row mobile"] },
+    "BrandGrid": { "hover_reveal": "short brand story" },
+    "UGCCarousel": { "upload_cta": true }
+  },
+  "interactions": {
+    "filters_instant_update": true,
+    "mini_cart_slide_out": true,
+    "loading_animation": "compass",
+    "wishlist_requires_auth": false
+  },
+  "performance": {
+    "image_optim": true,
+    "font_preload": ["Montserrat Alternates", "Inter"],
+    "code_split": true,
+    "pwa": true
+  },
+  "data_models": {
+    "product": ["id", "title", "brand", "price", "images", "video", "activity", "materials", "sustainability", "sizes", "stock", "slug"],
+    "brand": ["id", "name", "logo", "origin", "story", "hero_image", "slug"],
+    "article": ["id", "title", "excerpt", "body_md", "cover_image", "slug"]
+  },
+  "norman_principles": {
+    "affordances": ["buttons look clickable", "filters as toggles"],
+    "signifiers": ["icons, hover states, scroll hints"],
+    "constraints": ["minimal navigation", "grayed unavailable filters"],
+    "mapping": ["filters update results instantly"],
+    "feedback": ["mini cart confirmation", "form validation states"],
+    "conceptual_model": ["organize by activity and kits"],
+    "discoverability": ["explore hub, shoppable looks"]
+  }
+}

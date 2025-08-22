@@ -31,7 +31,7 @@ All colors MUST be HSL.
     --muted-foreground: 154 20% 35%;
 
     /* Burnt Orange Accent */
-    --accent: 17 78% 54%;
+    --accent: 17 75% 45%;
     --accent-foreground: 42 65% 96%;
 
     --destructive: 0 84.2% 60.2%;
@@ -87,7 +87,7 @@ All colors MUST be HSL.
     --muted: 154 30% 15%;
     --muted-foreground: 42 35% 65%;
 
-    --accent: 17 78% 54%;
+    --accent: 17 75% 45%;
     --accent-foreground: 42 65% 96%;
 
     --destructive: 0 62.8% 30.6%;
@@ -144,5 +144,30 @@ All colors MUST be HSL.
   
   .transition-bounce {
     transition: var(--transition-bounce);
+  }
+
+  /* Apple-like microinteractions */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+  
+  .hover-scale {
+    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  
+  .hover-glow {
+    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .hover-glow:hover {
+    box-shadow: 0 0 40px hsl(var(--accent) / 0.3);
   }
 }

@@ -23,20 +23,19 @@ const Hero = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl font-serif leading-relaxed mb-8 text-primary-foreground/90">
-            Discover curated outdoor gear from premium international brands, 
-            plus our exclusive Back Country Originals collection.
+          <p className="text-xl md:text-2xl font-sans leading-relaxed mb-12 text-primary-foreground/90 max-w-3xl mx-auto">
+            Premium outdoor gear curated globally + Back Country Originals designed in New Zealand.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="group font-accent">
-              SHOP THE ADVENTURE
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+            <Button variant="hero" size="lg" className="group font-accent bg-white text-primary hover:bg-white/90 transition-smooth px-8 py-4">
+              Explore Collection
+              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
             </Button>
             
-            <Button variant="premium" size="lg" className="group font-accent">
+            <Button variant="ghost" size="lg" className="group font-accent text-white border-white/20 hover:bg-white/10 transition-smooth px-8 py-4">
               <Play className="mr-2 h-5 w-5" />
-              WATCH OUR STORY
+              Watch Our Story
             </Button>
           </div>
         </div>

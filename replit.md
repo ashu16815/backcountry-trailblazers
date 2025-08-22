@@ -1,7 +1,14 @@
 # Back Country Lifestyle
 
 ## Overview
-Back Country Lifestyle is an outdoor gear e-commerce application built for New Zealand's adventure market. The platform showcases curated international outdoor brands alongside exclusive "Back Country Originals" private label collections. The application features a premium design system with outdoor-themed aesthetics, focusing on adventure gear including hiking, camping, travel, and lifestyle products.
+Back Country Lifestyle is a premium outdoor gear e-commerce platform designed with world-class digital product design principles. Inspired by Apple's design DNA meets Patagonia's storytelling, the platform creates a bold, immersive, and story-driven experience that feels timeless, intuitive, and iconic. The platform showcases curated international outdoor brands alongside exclusive "Back Country Originals" private label collections.
+
+## Creative Direction
+Acting as a world-class digital product designer with Apple-level craft, the platform emphasizes:
+- **Uniqueness**: Every section intentionally crafted, avoiding generic ecommerce layouts
+- **Minimalism**: Whitespace, balance, and clean lines as important as content
+- **Storytelling**: Every product and brand tells a story, designed for curiosity and immersion
+- **Human Touch**: Subtle microinteractions, warm typography, and crafted details make digital feel personal
 
 ## User Preferences
 Preferred communication style: Simple, everyday language.
@@ -30,7 +37,9 @@ Preferred communication style: Simple, everyday language.
 - **Connection**: Neon Database serverless driver for cloud PostgreSQL connectivity
 
 ### Design System
-- **Color Palette**: Forest green primary (#1B3A2A), navy secondary (#0E2A47), burnt orange accent (#E95D2A), sand beige (#F4E3C1)
+- **Color Palette**: Forest green primary (#1B3A2A), navy secondary (#0E2A47), refined burnt orange accent (#C8491C), sand beige (#F4E3C1)
+- **Typography**: Typography carries the feeling of crafted outdoor adventure gear — bold yet refined, with Apple-like clarity
+- **Motion Design**: Meaningful, not decorative — Apple-like transitions that guide attention, provide context, and feel fluid
 - **Component Library**: Custom button variants including "hero" and "premium" styles with gradient backgrounds
 - **Responsive Design**: Mobile-first approach with standard Tailwind breakpoints
 - **Accessibility**: WCAG compliance with semantic HTML, focus management, and proper contrast ratios
