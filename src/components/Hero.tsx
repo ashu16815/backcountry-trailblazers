@@ -16,7 +16,7 @@ const Hero = () => {
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
         <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-display font-bold tracking-tight mb-6">
+          <h1 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-6">
             GEAR UP FOR YOUR
             <span className="block gradient-accent bg-clip-text text-transparent">
               NEXT ADVENTURE
@@ -29,12 +29,12 @@ const Hero = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="group">
-              EXPLORE COLLECTION
+            <Button variant="hero" size="lg" className="group font-accent">
+              SHOP THE ADVENTURE
               <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
             </Button>
             
-            <Button variant="premium" size="lg" className="group">
+            <Button variant="premium" size="lg" className="group font-accent">
               <Play className="mr-2 h-5 w-5" />
               WATCH OUR STORY
             </Button>

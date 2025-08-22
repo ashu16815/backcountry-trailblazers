@@ -11,7 +11,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="space-y-4">
-            <h3 className="text-2xl font-display font-bold tracking-wider">
+            <h3 className="text-2xl font-heading font-bold tracking-wider">
               BACK COUNTRY
             </h3>
             <p className="font-serif text-primary-foreground/80">
@@ -32,7 +32,7 @@ const Footer = () => {
 
           {/* Shop */}
           <div className="space-y-4">
-            <h4 className="font-display font-bold text-lg">SHOP</h4>
+            <h4 className="font-heading font-bold text-lg">SHOP</h4>
             <ul className="space-y-2 text-primary-foreground/80">
               <li><a href="#" className="hover:text-primary-foreground transition-smooth">Hiking</a></li>
               <li><a href="#" className="hover:text-primary-foreground transition-smooth">Camping</a></li>
@@ -44,7 +44,7 @@ const Footer = () => {
 
           {/* Explore */}
           <div className="space-y-4">
-            <h4 className="font-display font-bold text-lg">EXPLORE</h4>
+            <h4 className="font-heading font-bold text-lg">EXPLORE</h4>
             <ul className="space-y-2 text-primary-foreground/80">
               <li><a href="#" className="hover:text-primary-foreground transition-smooth">Trail Guides</a></li>
               <li><a href="#" className="hover:text-primary-foreground transition-smooth">Adventure Journal</a></li>
@@ -56,7 +56,7 @@ const Footer = () => {
 
           {/* Newsletter */}
           <div className="space-y-4">
-            <h4 className="font-display font-bold text-lg">STAY CONNECTED</h4>
+            <h4 className="font-heading font-bold text-lg">STAY CONNECTED</h4>
             <p className="text-primary-foreground/80 font-serif">
               Join our community for trail updates and exclusive gear drops.
             </p>
@@ -65,7 +65,7 @@ const Footer = () => {
                 placeholder="Your email address" 
                 className="bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60"
               />
-              <Button variant="secondary" className="w-full">
+              <Button variant="secondary" className="w-full font-accent">
                 <Mail className="mr-2 h-4 w-4" />
                 SUBSCRIBE
               </Button>

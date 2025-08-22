@@ -36,7 +36,7 @@ const PrivateLabelSpotlight = () => {
           <Badge variant="outline" className="mb-4 text-accent border-accent">
             BACK COUNTRY ORIGINALS
           </Badge>
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
             DESIGNED FOR 
             <span className="gradient-accent bg-clip-text text-transparent block">
               NEW ZEALAND
@@ -68,7 +68,7 @@ const PrivateLabelSpotlight = () => {
 
                   <div className="absolute bottom-6 left-6 right-6">
                     <IconComponent className="h-8 w-8 text-white mb-3 group-hover:scale-110 transition-bounce" />
-                    <h3 className="text-2xl font-display font-bold text-white mb-2">
+                    <h3 className="text-2xl font-heading font-bold text-white mb-2">
                       {collection.name}
                     </h3>
                     <p className="text-white/90 font-serif">
@@ -83,7 +83,7 @@ const PrivateLabelSpotlight = () => {
 
         {/* CTA */}
         <div className="text-center">
-          <Button variant="adventure" size="lg" className="group">
+          <Button variant="adventure" size="lg" className="group font-accent">
             DISCOVER OUR STORY
             <Compass className="ml-2 h-5 w-5 group-hover:rotate-180 transition-transform duration-500" />
           </Button>

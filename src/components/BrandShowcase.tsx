@@ -43,7 +43,7 @@ const BrandShowcase = () => {
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-6">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-6">
             CURATED GLOBAL 
             <span className="gradient-hero bg-clip-text text-transparent block">
               PARTNERS
@@ -65,7 +65,7 @@ const BrandShowcase = () => {
               <div className={`${brand.image} p-8`}>
                 <div className="flex items-start justify-between mb-6">
                   <div>
-                    <h3 className="text-2xl font-display font-bold text-foreground mb-2">
+                    <h3 className="text-2xl font-heading font-bold text-foreground mb-2">
                       {brand.name}
                     </h3>
                     <div className="flex items-center text-muted-foreground mb-1">

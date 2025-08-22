@@ -8,7 +8,7 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <h1 className="text-2xl font-display font-bold text-primary tracking-wider">
+            <h1 className="text-2xl font-heading font-bold text-primary tracking-wider">
               BACK COUNTRY
             </h1>
           </div>

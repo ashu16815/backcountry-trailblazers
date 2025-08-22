@@ -20,8 +20,9 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				serif: ['Crimson Pro', 'serif'],
-				display: ['Bebas Neue', 'cursive'],
+				serif: ['Crimson Pro', 'serif'], 
+				heading: ['Montserrat Alternates', 'sans-serif'],
+				accent: ['Oswald', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

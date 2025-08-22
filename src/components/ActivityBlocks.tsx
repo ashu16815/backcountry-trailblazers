@@ -38,8 +38,8 @@ const ActivityBlocks = () => {
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            FIND YOUR ADVENTURE
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+            SHOP BY ADVENTURE
           </h2>
           <p className="text-xl text-muted-foreground font-serif max-w-2xl mx-auto">
             Whether you're conquering peaks or exploring your backyard, 
@@ -60,7 +60,7 @@ const ActivityBlocks = () => {
                 <div className="relative z-10 p-8 text-center h-64 flex flex-col justify-center items-center">
                   <IconComponent className="h-12 w-12 text-white mb-4 group-hover:scale-110 transition-bounce" />
                   
-                  <h3 className="text-2xl font-display font-bold text-white mb-3 tracking-wider">
+                  <h3 className="text-2xl font-heading font-bold text-white mb-3 tracking-wider">
                     {activity.title}
                   </h3>
                   
@@ -70,7 +70,7 @@ const ActivityBlocks = () => {
                   
                   <Button 
                     variant="outline" 
-                    className="border-white text-white hover:bg-white hover:text-primary transition-smooth"
+                    className="border-white text-white hover:bg-white hover:text-primary transition-smooth font-accent"
                   >
                     SHOP NOW
                   </Button>
