@@ -1,0 +1,351 @@
+{
+  "author_intent": "Act as a world-class product designer with 20+ years of experience, including leading teams at Apple. Produce super-unique, premium, and crystal-clear lifestyle pages with zero ambiguity. The design must strictly apply Don Norman’s principles (affordances, signifiers, constraints, mapping, feedback, conceptual models, discoverability) and prioritize accessibility, performance, and editorial storytelling.",
+  "scope": "Create dedicated lifestyle pages and all supporting routes, components, and content models for Hiking, Camping, Golf, and Activewear (alias: Active Wear). Integrate with existing navigation, search, filters, analytics, and checkout.",
+  "routing": {
+    "base": "/lifestyle",
+    "pages": [
+      { "name": "Hiking", "slug": "hiking", "aliases": ["tramping"] },
+      { "name": "Camping", "slug": "camping", "aliases": ["camp"] },
+      { "name": "Golf", "slug": "golf", "aliases": [] },
+      { "name": "Activewear", "slug": "activewear", "aliases": ["active-wear", "athleisure"] }
+    ],
+    "breadcrumbs": true,
+    "sitemap": true
+  },
+  "navigation_updates": {
+    "top_nav_insert_after": "Explore",
+    "label": "Lifestyle",
+    "href": "/lifestyle",
+    "children": [
+      { "label": "Hiking", "href": "/lifestyle/hiking" },
+      { "label": "Camping", "href": "/lifestyle/camping" },
+      { "label": "Golf", "href": "/lifestyle/golf" },
+      { "label": "Activewear", "href": "/lifestyle/activewear" }
+    ]
+  },
+  "global_design": {
+    "remove_orange_hero_bar": true,
+    "colors": {
+      "primary": "#1B3A2A",
+      "secondary": "#0E2A47",
+      "accent": "#C8491C",
+      "background": "#FAFAF9",
+      "ink": "#111827"
+    },
+    "typography": {
+      "headings": "Montserrat Alternates",
+      "body": "Inter",
+      "accent": "Oswald",
+      "rules": [
+        "H1 48-64px tight leading",
+        "H2 36-48px",
+        "Body 16-18px 1.6 line-height",
+        "Buttons 14-16px uppercase tracking"
+      ]
+    },
+    "motion": {
+      "philosophy": "Meaningful, Apple-grade motion only; guide attention, never distract.",
+      "tokens": { "duration": 220, "easing": "cubic-bezier(0.2, 0.8, 0.2, 1)" }
+    },
+    "norman_principles": {
+      "affordances": "Buttons, chips, and toggles are unmistakably interactive with hover/pressed states.",
+      "signifiers": "Clear icons, labels, scroll hints, focus rings.",
+      "constraints": "Minimal nav choices, disable unavailable filters, prevent invalid forms.",
+      "mapping": "Filters and size chips update visible results instantly.",
+      "feedback": "Mini-cart slide-out, toasts for actions, inline form validation.",
+      "conceptual_models": "Pages organized by real activities (kits, guides, essentials) not just SKUs.",
+      "discoverability": "Contextual promos, related content, shoppable looks."
+    },
+    "accessibility": {
+      "contrast_ratio_min": 4.5,
+      "focus_visible": true,
+      "skip_to_content": true,
+      "touch_target_min_px": 44,
+      "alt_text_required": true,
+      "semantic_headings": true
+    },
+    "performance": {
+      "image_optimization": true,
+      "font_preload": ["Montserrat Alternates", "Inter"],
+      "code_splitting": true,
+      "pwa": true
+    }
+  },
+  "content_models": {
+    "lifestyle_page": [
+      "title",
+      "hero_image",
+      "intro_copy",
+      "featured_kits[]",
+      "editorial_cards[]",
+      "top_picks_collection_id",
+      "size_fit_guides[]",
+      "sustainability_highlights[]",
+      "faq[]",
+      "ugc[]",
+      "seo"
+    ],
+    "kit": ["title", "slug", "products[]", "image", "description", "activity"],
+    "editorial_card": ["title", "slug", "image", "excerpt_md", "cta_label", "cta_href"]
+  },
+  "shared_components": {
+    "HeroCinematic": {
+      "props": ["image", "title", "subtitle", "primary_cta", "secondary_cta", "overlay.opacity"],
+      "behavior": "Parallax on desktop, static on mobile; no opaque color bars."
+    },
+    "FilterChips": {
+      "props": ["chips[]", "onChange", "selected[]", "disabled[]"],
+      "mapping": "Directly maps to product grid filters; instant update.",
+      "feedback": "Chip toggles animate with depth; aria-pressed state."
+    },
+    "ShoppableLooks": {
+      "props": ["looks[] {image, hotspots[{x,y,productId}]}"],
+      "affordance": "Hotspot cursor + tooltip; keyboard reachable."
+    },
+    "UGCCarousel": {
+      "props": ["images[]", "caption", "upload_cta"],
+      "signifier": "Dots + arrows; swipe on touch."
+    },
+    "FAQAccordion": {
+      "a11y": "ARIA-accordion compliant; remember open state per page."
+    }
+  },
+  "lifestyle_pages": [
+    {
+      "slug": "hiking",
+      "title": "Hiking",
+      "hero": {
+        "component": "HeroCinematic",
+        "image": "/images/lifestyle/hiking-hero.jpg",
+        "title": "Take the High Line",
+        "subtitle": "Alpine-tested layers, boots, and packs for NZ’s back country.",
+        "primary_cta": { "label": "Shop Hiking", "href": "/shop?activity=hiking" },
+        "secondary_cta": { "label": "Build Your Tramping Kit", "href": "#kits" },
+        "overlay": { "opacity": 0.22 }
+      },
+      "intro_copy": "Curated gear for steep climbs, volatile weather, and long miles. Designed and selected for real New Zealand terrain.",
+      "filter_chips": ["Men", "Women", "Layers", "Shells", "Boots", "Backpacks", "Sustainability"],
+      "sections": [
+        {
+          "type": "kits",
+          "id": "kits",
+          "title": "Hiking Kits",
+          "items": [
+            { "title": "Weekend Tramp", "slug": "weekend-tramp", "products": ["p-hike-01","p-hike-02","p-hike-03"], "image": "/images/kits/weekend-tramp.jpg" },
+            { "title": "Alpine Storm", "slug": "alpine-storm", "products": ["p-hike-04","p-hike-05","p-hike-06"], "image": "/images/kits/alpine-storm.jpg" }
+          ]
+        },
+        {
+          "type": "editorial_cards",
+          "title": "Guides & Stories",
+          "items": [
+            { "title": "Tongariro Crossing Guide", "slug": "tongariro-guide", "image": "/images/editorial/tongariro.jpg", "excerpt_md": "Weather windows, gear checklist, and hut bookings.", "cta_label": "Read Guide", "cta_href": "/explore/guides/tongariro" },
+            { "title": "Layering 101", "slug": "layering-101", "image": "/images/editorial/layering.jpg", "excerpt_md": "Master base, mid, and shells for four seasons in a day.", "cta_label": "Learn More", "cta_href": "/explore/journal/layering-101" }
+          ]
+        },
+        {
+          "type": "top_picks",
+          "title": "Top Picks for the Trail",
+          "collection_id": "col-hiking-top-picks"
+        },
+        {
+          "type": "size_fit_guides",
+          "items": [
+            { "title": "Boot Fit", "content_md": "Measure late in the day; allow a thumb’s width at the toe; test with hiking socks." },
+            { "title": "Pack Sizing", "content_md": "Torso length matters more than height; adjust hip belt first." }
+          ]
+        },
+        {
+          "type": "sustainability",
+          "badges": ["Recycled Nylon", "PFAS-free DWR", "Repair Service"]
+        },
+        { "type": "ugc", "hashtag": "#BackCountryNZ" },
+        {
+          "type": "faq",
+          "items": [
+            { "q": "What should I pack for a 2–3 day tramp?", "a": "Base + mid + shell, warm hat, gloves, PLB, map, water treatment, headlamp, food for 1 extra day." }
+          ]
+        }
+      ],
+      "seo": {
+        "title": "Hiking Gear & Kits — Back Country Lifestyle",
+        "description": "Alpine-tested hiking gear, curated kits, and NZ-specific guides.",
+        "schema": "ProductCollectionPage"
+      }
+    },
+    {
+      "slug": "camping",
+      "title": "Camping",
+      "hero": {
+        "component": "HeroCinematic",
+        "image": "/images/lifestyle/camping-hero.jpg",
+        "title": "Nights Under Southern Skies",
+        "subtitle": "Shelters, sleep systems, and camp kitchens—easy, reliable, packable.",
+        "primary_cta": { "label": "Shop Camping", "href": "/shop?activity=camping" },
+        "secondary_cta": { "label": "See Family Camp Kit", "href": "#kits" },
+        "overlay": { "opacity": 0.22 }
+      },
+      "intro_copy": "From family holidays to remote DOC sites, build a campsite that’s quick to pitch and a joy to use.",
+      "filter_chips": ["Tents", "Sleeping", "Cooking", "Lighting", "Furniture", "Sustainability"],
+      "sections": [
+        {
+          "type": "kits",
+          "id": "kits",
+          "title": "Camping Kits",
+          "items": [
+            { "title": "Family Basecamp", "slug": "family-basecamp", "products": ["p-camp-01","p-camp-02","p-camp-03"], "image": "/images/kits/family-basecamp.jpg" },
+            { "title": "Ultralight Duo", "slug": "ultralight-duo", "products": ["p-camp-04","p-camp-05","p-camp-06"], "image": "/images/kits/ultralight-duo.jpg" }
+          ]
+        },
+        {
+          "type": "editorial_cards",
+          "title": "Camp Skills",
+          "items": [
+            { "title": "NZ Campsite Finder", "slug": "doc-camps", "image": "/images/editorial/campsites.jpg", "excerpt_md": "Find DOC campsites and freedom camping rules.", "cta_label": "Browse Tips", "cta_href": "/explore/guides/camping-nz" },
+            { "title": "Campfire Recipes", "slug": "camp-recipes", "image": "/images/editorial/recipes.jpg", "excerpt_md": "Simple meals, minimal cleanup, maximum smiles.", "cta_label": "Cook These", "cta_href": "/explore/journal/campfire-recipes" }
+          ]
+        },
+        {
+          "type": "top_picks",
+          "title": "Editor’s Picks",
+          "collection_id": "col-camping-editors"
+        },
+        {
+          "type": "sustainability",
+          "badges": ["Bluesign Fabrics", "Recyclable Packaging"]
+        },
+        { "type": "ugc", "hashtag": "#BackCountryNZ" },
+        {
+          "type": "faq",
+          "items": [
+            { "q": "How do I choose tent size?", "a": "Choose +1 person capacity for comfort; consider vestibules for gear." }
+          ]
+        }
+      ],
+      "seo": {
+        "title": "Camping Tents, Sleep & Kitchen — Back Country Lifestyle",
+        "description": "Family to ultralight camping gear with NZ-ready kits and guides.",
+        "schema": "ProductCollectionPage"
+      }
+    },
+    {
+      "slug": "golf",
+      "title": "Golf",
+      "hero": {
+        "component": "HeroCinematic",
+        "image": "/images/lifestyle/golf-hero.jpg",
+        "title": "Play Through Any Weather",
+        "subtitle": "Technical polos, rain shells, and accessories tuned for NZ conditions.",
+        "primary_cta": { "label": "Shop Golf", "href": "/shop?activity=golf" },
+        "secondary_cta": { "label": "Build Your Course Kit", "href": "#kits" },
+        "overlay": { "opacity": 0.18 }
+      },
+      "intro_copy": "Performance apparel that moves, breathes, and stays sharp—on the links and off.",
+      "filter_chips": ["Men", "Women", "Polos", "Layers", "Rain", "Accessories"],
+      "sections": [
+        {
+          "type": "kits",
+          "id": "kits",
+          "title": "Course Kits",
+          "items": [
+            { "title": "Wet-Weather Kit", "slug": "wet-weather", "products": ["p-golf-01","p-golf-02","p-golf-03"], "image": "/images/kits/golf-wet.jpg" },
+            { "title": "Travel Light Kit", "slug": "travel-light", "products": ["p-golf-04","p-golf-05","p-golf-06"], "image": "/images/kits/golf-travel.jpg" }
+          ]
+        },
+        {
+          "type": "editorial_cards",
+          "title": "Guides",
+          "items": [
+            { "title": "Layering for Four Seasons", "slug": "golf-layering", "image": "/images/editorial/golf-layering.jpg", "excerpt_md": "Stay dry and swing free in shifting weather.", "cta_label": "Learn", "cta_href": "/explore/journal/golf-layering" }
+          ]
+        },
+        {
+          "type": "top_picks",
+          "title": "Clubhouse Favourites",
+          "collection_id": "col-golf-favourites"
+        },
+        { "type": "sustainability", "badges": ["Recycled Polyester", "Repair & Care"] },
+        { "type": "ugc", "hashtag": "#BackCountryNZ" },
+        { "type": "faq", "items": [ { "q": "What rain rating do I need?", "a": "20k/20k waterproof/breathability is a robust all-rounder for NZ." } ] }
+      ],
+      "seo": {
+        "title": "Golf Apparel & Weather Kits — Back Country Lifestyle",
+        "description": "Technical, weather-ready golf apparel with curated kits and guides.",
+        "schema": "ProductCollectionPage"
+      }
+    },
+    {
+      "slug": "activewear",
+      "title": "Activewear",
+      "hero": {
+        "component": "HeroCinematic",
+        "image": "/images/lifestyle/active-hero.jpg",
+        "title": "Move, Train, Repeat",
+        "subtitle": "Breathable layers and supportive fits for running, training, and recovery.",
+        "primary_cta": { "label": "Shop Activewear", "href": "/shop?activity=activewear" },
+        "secondary_cta": { "label": "Build Your Training Kit", "href": "#kits" },
+        "overlay": { "opacity": 0.18 }
+      },
+      "intro_copy": "Engineered fabrics with a human fit—supportive, breathable, and built to last.",
+      "filter_chips": ["Men", "Women", "Tops", "Tights", "Outer", "Accessories", "Sustainability"],
+      "sections": [
+        {
+          "type": "kits",
+          "id": "kits",
+          "title": "Training Kits",
+          "items": [
+            { "title": "Daily Run", "slug": "daily-run", "products": ["p-act-01","p-act-02","p-act-03"], "image": "/images/kits/daily-run.jpg" },
+            { "title": "Gym Essentials", "slug": "gym-essentials", "products": ["p-act-04","p-act-05","p-act-06"], "image": "/images/kits/gym-essentials.jpg" }
+          ]
+        },
+        {
+          "type": "editorial_cards",
+          "title": "Journal",
+          "items": [
+            { "title": "Fabric Tech Explained", "slug": "fabric-tech", "image": "/images/editorial/fabric-tech.jpg", "excerpt_md": "Odour control, wicking, and recovery—what actually matters.", "cta_label": "Read", "cta_href": "/explore/journal/fabric-tech" }
+          ]
+        },
+        {
+          "type": "top_picks",
+          "title": "Editor’s Picks",
+          "collection_id": "col-active-editors"
+        },
+        { "type": "sustainability", "badges": ["Bluesign", "Recycled", "Durability Guarantee"] },
+        { "type": "ugc", "hashtag": "#BackCountryNZ" },
+        { "type": "faq", "items": [ { "q": "How should tights fit?", "a": "Firm but not restrictive; no sheerness under squat test." } ] }
+      ],
+      "seo": {
+        "title": "Activewear & Training Kits — Back Country Lifestyle",
+        "description": "Performance activewear with curated training kits and technical guides.",
+        "schema": "ProductCollectionPage"
+      }
+    }
+  ],
+  "product_grid_rules": {
+    "preset_filters_by_page": {
+      "/lifestyle/hiking": { "activity": ["hiking","tramping"] },
+      "/lifestyle/camping": { "activity": ["camping"] },
+      "/lifestyle/golf": { "activity": ["golf"] },
+      "/lifestyle/activewear": { "activity": ["activewear","athleisure"] }
+    },
+    "card": { "quick_add": true, "sustainability_badge": true, "hover_effect": "lift", "image_ratio": "4:5" }
+  },
+  "analytics": {
+    "events": [
+      "lifestyle_page_view",
+      "kit_add_all_to_cart",
+      "filter_chip_toggled",
+      "editorial_card_opened",
+      "ugc_submit_clicked"
+    ]
+  },
+  "acceptance_criteria": [
+    "All four pages render with cinematic heroes and no orange bars.",
+    "Chips filter the grid instantly with animated feedback.",
+    "Kits support 'Add entire kit to cart' and individual add.",
+    "All images have alt text; keyboard navigation works across components.",
+    "CLS < 0.1, LCP < 2.5s on desktop hero, color contrast >= 4.5:1.",
+    "Breadcrumbs generated and included in sitemap.xml; SEO titles/descriptions present.",
+    "Norman principles demonstrably applied in components and interactions."
+  ]
+}

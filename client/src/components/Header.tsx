@@ -1,5 +1,12 @@
 import { Button } from "@/components/ui/button";
-import { ShoppingBag, Search, Menu, User } from "lucide-react";
+import { 
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import { ShoppingBag, Search, Menu, User, ChevronDown } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -8,18 +15,41 @@ const Header = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <h1 className="text-2xl font-heading font-bold text-primary tracking-wider">
+            <Link to="/" className="text-2xl font-heading font-bold text-primary tracking-wider hover:text-primary/80 transition-smooth">
               BACK COUNTRY
-            </h1>
+            </Link>
           </div>
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a href="#" className="text-foreground hover:text-primary transition-smooth font-medium">Shop</a>
-            <a href="#" className="text-foreground hover:text-primary transition-smooth font-medium">Explore</a>
-            <a href="#" className="text-foreground hover:text-primary transition-smooth font-medium">Brands</a>
-            <a href="#" className="text-foreground hover:text-primary transition-smooth font-medium">Private Label</a>
-            <a href="#" className="text-foreground hover:text-primary transition-smooth font-medium">Sustainability</a>
+            <Link to="/shop" className="text-foreground hover:text-primary transition-smooth font-medium">Shop</Link>
+            <Link to="/explore" className="text-foreground hover:text-primary transition-smooth font-medium">Explore</Link>
+            
+            {/* Lifestyle Dropdown */}
+            <DropdownMenu>
+              <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-smooth font-medium focus:outline-none">
+                Lifestyle
+                <ChevronDown className="ml-1 h-4 w-4" />
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="start" className="w-48">
+                <DropdownMenuItem asChild>
+                  <Link to="/lifestyle/hiking" className="w-full">Hiking</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/lifestyle/camping" className="w-full">Camping</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/lifestyle/golf" className="w-full">Golf</Link>
+                </DropdownMenuItem>
+                <DropdownMenuItem asChild>
+                  <Link to="/lifestyle/activewear" className="w-full">Activewear</Link>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
+            
+            <Link to="/brands" className="text-foreground hover:text-primary transition-smooth font-medium">Brands</Link>
+            <Link to="/private-label" className="text-foreground hover:text-primary transition-smooth font-medium">Private Label</Link>
+            <Link to="/sustainability" className="text-foreground hover:text-primary transition-smooth font-medium">Sustainability</Link>
           </nav>
 
           {/* Actions */}
