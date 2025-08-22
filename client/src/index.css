@@ -8,31 +8,31 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Back Country Lifestyle Design System */
-    --background: 42 65% 96%;
-    --foreground: 154 44% 16%;
+    /* Back Country Lifestyle Design System - Updated P0 Colors */
+    --background: 42 35% 94%;
+    --foreground: 220 13% 9%;
 
-    --card: 42 65% 96%;
-    --card-foreground: 154 44% 16%;
+    --card: 42 35% 94%;
+    --card-foreground: 220 13% 9%;
 
-    --popover: 42 65% 96%;
-    --popover-foreground: 154 44% 16%;
+    --popover: 42 35% 94%;
+    --popover-foreground: 220 13% 9%;
 
-    /* Forest Green Primary */
-    --primary: 154 44% 16%;
-    --primary-foreground: 42 65% 96%;
+    /* Forest Green Primary #1B3A2A */
+    --primary: 154 33% 17%;
+    --primary-foreground: 42 35% 94%;
 
-    /* Navy Secondary */
+    /* Deep Navy Secondary #0E2A47 */
     --secondary: 210 68% 17%;
-    --secondary-foreground: 42 65% 96%;
+    --secondary-foreground: 42 35% 94%;
 
-    /* Sand Beige Muted */
-    --muted: 42 35% 86%;
+    /* Sand Beige Muted #F4E3C1 */
+    --muted: 42 56% 86%;
     --muted-foreground: 154 20% 35%;
 
-    /* Burnt Orange Accent */
-    --accent: 17 75% 45%;
-    --accent-foreground: 42 65% 96%;
+    /* Ink Accent #111827 */
+    --accent: 220 13% 9%;
+    --accent-foreground: 42 35% 94%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -119,6 +119,19 @@ All colors MUST be HSL.
   h1, h2, h3, h4, h5, h6 {
     @apply font-heading font-bold tracking-tight;
   }
+
+  /* Typography Scale */
+  h1 {
+    @apply text-5xl md:text-6xl leading-tight;
+  }
+  
+  h2 {
+    @apply text-3xl md:text-4xl;
+  }
+  
+  body {
+    @apply text-base md:text-lg leading-relaxed;
+  }
 }
 
 @layer utilities {
@@ -148,26 +161,36 @@ All colors MUST be HSL.
 
   /* Apple-like microinteractions */
   .hover-lift {
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   
   .hover-lift:hover {
-    transform: translateY(-8px) scale(1.02);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px -5px hsl(var(--primary) / 0.15);
+  }
+  
+  .hover-lift:active {
+    transform: scale(0.98);
   }
   
   .hover-scale {
-    transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   
   .hover-scale:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
   }
   
   .hover-glow {
-    transition: box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: box-shadow 220ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
   
   .hover-glow:hover {
-    box-shadow: 0 0 40px hsl(var(--accent) / 0.3);
+    box-shadow: 0 0 40px hsl(var(--primary) / 0.3);
+  }
+  
+  /* Page transitions */
+  .fade-scale {
+    transition: opacity 180ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1);
   }
 }

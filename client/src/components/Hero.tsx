@@ -1,51 +1,66 @@
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Play } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import heroImage from "@/assets/hero-nz-mountains.jpg";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroImage})` }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-r from-primary/70 via-primary/40 to-transparent" />
-      </div>
-
-      {/* Content */}
-      <div className="relative z-10 container mx-auto px-4 text-center text-primary-foreground">
-        <div className="max-w-4xl mx-auto">
-          <h1 className="text-5xl md:text-7xl font-heading font-bold tracking-tight mb-6">
-            GEAR UP FOR YOUR
-            <span className="block gradient-accent bg-clip-text text-transparent">
-              NEXT ADVENTURE
-            </span>
-          </h1>
-          
-          <p className="text-xl md:text-2xl font-sans leading-relaxed mb-12 text-primary-foreground/90 max-w-3xl mx-auto">
-            Premium outdoor gear curated globally + Back Country Originals designed in New Zealand.
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <Button variant="hero" size="lg" className="group font-accent bg-white text-primary hover:bg-white/90 transition-smooth px-8 py-4">
+    <section className="relative isolate overflow-hidden bg-zinc-950 text-white">
+      <img
+        src={heroImage}
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+        loading="eager"
+      />
+      {/* Subtle gradient for legibility – replaces any solid color bar */}
+      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/0 to-zinc-950/25" />
+      
+      <div className="relative mx-auto max-w-6xl px-6 py-28 sm:py-36">
+        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl font-heading">
+          Premium outdoor gear, curated for NZ back country.
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg text-zinc-200 font-sans leading-relaxed">
+          International brands you won't find in-store + Back Country Originals, tested in NZ conditions.
+        </p>
+        <div className="mt-8 flex gap-4">
+          <Button
+            asChild
+            className="inline-flex items-center rounded-xl bg-primary px-5 py-3 text-sm font-semibold hover-lift hover:bg-primary/90 transition-all duration-220"
+          >
+            <a href="/shop">
               Explore Collection
-              <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-smooth" />
-            </Button>
-            
-            <Button variant="ghost" size="lg" className="group font-accent text-white border-white/20 hover:bg-white/10 transition-smooth px-8 py-4">
-              <Play className="mr-2 h-5 w-5" />
-              Watch Our Story
-            </Button>
-          </div>
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </a>
+          </Button>
+          <Button
+            variant="outline"
+            asChild
+            className="inline-flex items-center rounded-xl border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10 transition-all duration-220 text-white"
+          >
+            <a href="#kits">
+              Build Your Kit
+            </a>
+          </Button>
         </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-primary-foreground animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary-foreground/30 rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary-foreground/50 rounded-full mt-2 animate-pulse" />
-        </div>
+        
+        {/* Trust strip */}
+        <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm text-zinc-300">
+          <li className="flex items-center gap-2">
+            <span>•</span>
+            Free 30-day returns
+          </li>
+          <li className="flex items-center gap-2">
+            <span>•</span>
+            NZ customer support
+          </li>
+          <li className="flex items-center gap-2">
+            <span>•</span>
+            Carbon-aware delivery
+          </li>
+          <li className="flex items-center gap-2">
+            <span>•</span>
+            Secure checkout
+          </li>
+        </ul>
       </div>
     </section>
   );

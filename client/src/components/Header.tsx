@@ -12,22 +12,22 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Link to="/" className="text-2xl font-heading font-bold text-primary tracking-wider hover:text-primary/80 transition-smooth">
+            <Link to="/" className="text-2xl font-heading font-bold text-primary tracking-widest hover:text-primary/80 transition-smooth">
               BACK COUNTRY
             </Link>
           </div>
 
           {/* Navigation - Desktop */}
           <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/shop" className="text-foreground hover:text-primary transition-smooth font-medium">Shop</Link>
-            <Link to="/explore" className="text-foreground hover:text-primary transition-smooth font-medium">Explore</Link>
+            <Link to="/shop" className="text-foreground hover:text-primary transition-smooth font-medium tracking-wide">Shop</Link>
+            <Link to="/explore" className="text-foreground hover:text-primary transition-smooth font-medium tracking-wide">Explore</Link>
             
             {/* Lifestyle Dropdown */}
             <DropdownMenu>
-              <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-smooth font-medium focus:outline-none">
+              <DropdownMenuTrigger className="flex items-center text-foreground hover:text-primary transition-smooth font-medium focus:outline-none tracking-wide">
                 Lifestyle
                 <ChevronDown className="ml-1 h-4 w-4" />
               </DropdownMenuTrigger>
@@ -47,9 +47,8 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
             
-            <Link to="/brands" className="text-foreground hover:text-primary transition-smooth font-medium">Brands</Link>
-            <Link to="/private-label" className="text-foreground hover:text-primary transition-smooth font-medium">Private Label</Link>
-            <Link to="/sustainability" className="text-foreground hover:text-primary transition-smooth font-medium">Sustainability</Link>
+            <Link to="/brands" className="text-foreground hover:text-primary transition-smooth font-medium tracking-wide">Brands</Link>
+            <Link to="/private-label" className="text-foreground hover:text-primary transition-smooth font-medium tracking-wide">Private Label</Link>
           </nav>
 
           {/* Actions */}

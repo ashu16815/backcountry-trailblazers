@@ -1,0 +1,141 @@
+P0 changes (above-the-fold) — do these first
+
+Headline & subhead (clarity > poetry)
+
+H1: Premium outdoor gear, curated for NZ back country.
+
+Sub: International brands you won’t find in-store + Back Country Originals, tested in NZ conditions.
+
+CTAs
+
+Primary: Explore Collection →
+
+Secondary (ghost): Build Your Kit (anchors down to “Kits” section).
+
+Remove any opaque color bar in the hero and use a subtle dark gradient (top→bottom, 0.0→0.25) if readability needs help.
+
+Navigation
+
+Keep 5 core items as above; align right: Search, Account, Cart. Sticky, 80–88px height, 12–16px letter-spacing for elegance.
+
+Trust strip (compact, icon + label)
+
+Free 30-day returns • NZ customer support • Carbon-aware delivery • Secure checkout
+
+Performance budget
+
+Hero ≤ 350 KB (AVIF/WebM), defer autoplay on mobile; preload heading font; CLS < 0.1, LCP < 2.5s.
+
+P1 body layout (memorable + shoppable)
+
+Shop by Adventure (4 tiles)
+Hike • Camp • Golf • Activewear — large lifestyle tiles; hover zoom + darken; click pre-filters /shop?activity=….
+
+Private Label Spotlight (story > SKU)
+One wide image, short origin story, CTA “See Originals”.
+
+Bestsellers / New drops
+8-card carousel; quick-add; sustainability badge.
+
+Kits you can buy in one click
+Weekend Tramp • Alpine Storm • Family Basecamp • Wet-Weather Golf — each with “Add entire kit” + itemized view.
+
+Explore (editorial)
+3 cards: Tongariro Guide, Layering 101, Campfire Recipes. Treat like a mini magazine.
+
+UGC band
+#BackCountryNZ grid; upload CTA.
+
+Sustainability panel
+Badges: Recycled, PFAS-free, Repair Service; link to policy.
+
+Micro-interactions (subtle, “Apple-like”)
+
+Button hover = slight lift + shadow; pressed = micro-shrink (0.98).
+
+Add-to-cart → mini-cart slides from right, item thumbnail + undo.
+
+Filter chips toggle instantly (no page reload).
+
+Page transitions: fade+scale 180–220ms, cubic-bezier(0.2,0.8,0.2,1).
+
+Accessibility & SEO checklist
+
+Contrast ≥ 4.5:1; focus rings visible; skip-to-content link.
+
+One H1 on the page; meaningful alt text; landmark roles (header/nav/main/footer).
+
+<title> ≤ 60 chars; meta description 150–160; canonical + OG tags; JSON-LD Organization and ItemList for carousels.
+
+Typography & color (polished, outdoors)
+
+Headings: Montserrat Alternates (700).
+
+Body: Inter (400/500).
+
+Scale: 48/36/24/18/16; line-height 1.2 (display) / 1.6 (body).
+
+Palette: Forest #1B3A2A, Deep Navy #0E2A47, Sand #F4E3C1, Ink #111827.
+
+Primary button = Forest; Secondary = Navy outline; never orange bars.
+
+Copy you can paste
+
+Hero H1: Gear for real New Zealand adventures.
+
+Hero sub: Curated international brands you won’t find in-store, plus Back Country Originals—alpine-tested, built to last.
+
+CTA: Explore Collection • Build Your Kit
+
+Drop-in hero (React + Tailwind)
+export default function Hero() {
+  return (
+    <section className="relative isolate overflow-hidden bg-zinc-950 text-white">
+      <img
+        src="/images/hero-nz-alps.avif"
+        alt=""
+        className="absolute inset-0 h-full w-full object-cover"
+        loading="eager"
+      />
+      {/* subtle gradient for legibility – replaces any solid color bar */}
+      <div className="absolute inset-0 bg-gradient-to-b from-zinc-950/20 to-zinc-950/40" />
+      <div className="relative mx-auto max-w-6xl px-6 py-28 sm:py-36">
+        <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
+          Gear for real New Zealand adventures
+        </h1>
+        <p className="mt-6 max-w-2xl text-lg text-zinc-200">
+          Curated international brands you won’t find in-store, plus Back Country
+          Originals—alpine-tested, built to last.
+        </p>
+        <div className="mt-8 flex gap-4">
+          <a
+            href="/shop"
+            className="inline-flex items-center rounded-xl bg-emerald-900 px-5 py-3 text-sm font-semibold hover:-translate-y-0.5 hover:bg-emerald-800 transition"
+          >
+            Explore Collection →
+          </a>
+          <a
+            href="#kits"
+            className="inline-flex items-center rounded-xl border border-white/30 px-5 py-3 text-sm font-semibold hover:bg-white/10 transition"
+          >
+            Build Your Kit
+          </a>
+        </div>
+        {/* trust strip */}
+        <ul className="mt-8 flex flex-wrap gap-x-8 gap-y-2 text-sm text-zinc-300">
+          <li>Free 30-day returns</li><li>NZ support</li><li>Carbon-aware delivery</li><li>Secure checkout</li>
+        </ul>
+      </div>
+    </section>
+  );
+}
+
+“No-ambiguity” implementation brief (use with your builder)
+
+Add sections in this order: Hero → Trust strip → Shop by Adventure (4 tiles) → Private Label Spotlight → Bestsellers/New → Kits (with “Add entire kit”) → Explore (3 cards) → UGC → Sustainability → Email capture → Footer.
+
+Ensure hero has no solid color bar; use gradient overlay ≤ 40% opacity if needed.
+
+Enable instant filter chips and mini-cart slide-out.
+
+Enforce font preload, AVIF/WebP images, lazy-load below-the-fold media.

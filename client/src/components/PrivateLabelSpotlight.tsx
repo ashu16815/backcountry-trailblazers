@@ -44,30 +44,30 @@ const PrivateLabelSpotlight = () => {
           </p>
         </div>
 
-        {/* Featured Story Block - Cinematic */}
+        {/* Featured Story Block - Wide Image with Story */}
         <div className="relative mb-20">
           <div className="bg-gradient-to-r from-primary via-primary/90 to-secondary rounded-2xl overflow-hidden shadow-premium">
-            <div className="relative h-96 md:h-[500px] flex items-center">
+            <div className="relative h-80 md:h-96 flex items-center">
               {/* Background Pattern */}
               <div className="absolute inset-0 opacity-20">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-white/5" />
               </div>
               
               <div className="relative z-10 container mx-auto px-8">
-                <div className="max-w-3xl">
-                  <Badge variant="secondary" className="bg-white/20 text-white border-white/30 mb-6">
-                    CRAFTED IN AOTEAROA
-                  </Badge>
-                  <h3 className="text-4xl md:text-5xl font-heading font-bold text-white mb-6 leading-tight">
-                    Born from New Zealand's 
-                    <span className="block">untamed landscapes</span>
+                <div className="max-w-2xl">
+                  <h3 className="text-3xl md:text-4xl font-heading font-bold text-white mb-4 leading-tight">
+                    Tested in New Zealand's harshest conditions
                   </h3>
-                  <p className="text-xl text-white/90 font-sans leading-relaxed mb-8">
-                    Every piece tells a story of mountains conquered, trails blazed, and conditions mastered. 
-                    This is gear that doesn't just perform—it inspires.
+                  <p className="text-lg text-white/90 font-sans leading-relaxed mb-6">
+                    From alpine storms to coastal winds, every Back Country Original 
+                    is proven in the field before it reaches your pack.
                   </p>
-                  <Button variant="ghost" size="lg" className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary transition-smooth font-accent px-8 py-4">
-                    Discover Our Story
+                  <Button 
+                    variant="ghost" 
+                    size="lg" 
+                    className="bg-white/10 border-white/30 text-white hover:bg-white hover:text-primary transition-all duration-220 font-accent px-6 py-3 hover-lift"
+                  >
+                    See Originals
                   </Button>
                 </div>
               </div>
@@ -108,13 +108,6 @@ const PrivateLabelSpotlight = () => {
           })}
         </div>
 
-        {/* CTA */}
-        <div className="text-center">
-          <Button variant="adventure" size="lg" className="group font-accent">
-            DISCOVER OUR STORY
-            <Compass className="ml-2 h-5 w-5 group-hover:rotate-180 transition-transform duration-500" />
-          </Button>
-        </div>
       </div>
     </section>
   );
